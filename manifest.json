@@ -1,0 +1,22 @@
+{
+	"manifest_version": 2,
+	
+	"name": "SE Chat Dongers",
+	"version": "0.0.1",
+	"description": "A Chrome Extension that enables the use of your favorite Unicode faces in all open chat windows.",
+
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": false
+	},
+		
+	"icons": {
+		"128": "donger.png"
+	},
+
+	"web_accessible_resources": ["dongers.js"],
+	
+	"permissions": [
+		"storage", "tabs", "*://chat.stackexchange.com/rooms/*"
+	]
+}
