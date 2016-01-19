@@ -18,5 +18,9 @@
 	
 	"permissions": [
 		"storage", "tabs", "*://chat.stackexchange.com/rooms/*"
-	]
+	],
+
+	"externally_connectable": {
+		"matches": ["*://chat.stackexchange.com/rooms/*"]
+	}
 }
