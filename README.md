@@ -1,6 +1,6 @@
 # SE-Chat-Faces
 
-This is a chrome extension designed for StackExchange chat. It uses ```chrome.storage.sync``` to store strings of data. The main purpose of this extension is to store Unicode faces using the built-in chrome storage API. It means that you can store these Unicode faces across all of the PC's that you use (yaaay ```chrome.storage.sync```), and you can insert them into chat with only a few mouse clicks.
+This is a chrome extension designed for StackExchange chat. It uses ```chrome.storage.sync``` to store strings of data. The main purpose of this extension is to store Unicode faces using the built-in chrome storage API. It means that you can store these Unicode faces across all of the PC's that you use (yaaay ```chrome.storage.sync```), and you can insert them into chat with only a few mouse clicks. Can be found on the [chrome web store][2].
 
 # Limitations
 
@@ -24,3 +24,4 @@ chrome.storage.sync.get("count", function(item) { console.log("Items remaining: 
 I'll probably implement these into buttons at some point™
 
   [1]: https://developer.chrome.com/extensions/storage#properties
+  [2]: https://chrome.google.com/webstore/detail/se-chat-faces/gmjdaaahidcimfaipifeoekglllgdllb?hl=en-US&gl=US
