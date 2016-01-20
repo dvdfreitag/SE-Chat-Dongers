@@ -54,8 +54,8 @@ $("#face-button").click(function() {
 		}
 		else
 		{
-			/* Credit http://stackoverflow.com/a/5714243/1104294 */
-			$("#input").append($("#face-combo").find("option:selected").text());
+			/* Credit http://stackoverflow.com/a/4723017/1104294 */
+			$("#input").val($("#input").val() + $("#face-combo option:selected").text());
 			$("#face-cancel").click();
 		}
 	});

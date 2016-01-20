@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	
 	"name": "SE Chat Faces",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A Chrome Extension that enables the use of your favorite Unicode faces in all open chat windows.",
 
 	"background": {
