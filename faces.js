@@ -1,3 +1,20 @@
+var extension = $("#face-extension-id").val();
+$("#chat-buttons").append('<button class="button" id="face-button">Faces</button>');
+
+var interval = setInterval(function() {
+	chrome.runtime.sendMessage(extension, {message: "ping"}, function(response) {
+		if (response === undefined || response.message !== "pong")
+		{
+			console.log("Disconnected from extension, please refresh page.");
+			stopInterval();
+		}
+	});
+}, 10000);
+
+var stopInterval = function() {
+	clearInterval(interval);
+};
+
 var getFaces = function() {
 	$("#face-combo").find("option").remove();
 
@@ -10,11 +27,8 @@ var getFaces = function() {
 	});
 };
 
-var extension = $("#face-extension-id").val();
-$("#chat-buttons").append('<button class="button" id="face-button">Faces</button>');
-
 $("#face-button").click(function() {
-	$("body").append('<div id="face-popup-bg" class="wmd-prompt-background" style="position: fixed; top: 0px; z-index: 1000; opacity: 0.5; left: 0px; width: 100%; height: 100%;"/><div id="face-popup" style="top: 50%; left: 50%; display: block; padding: 10px; position: fixed; width: 200px; z-index: 1001; margin-top: -93.5px; margin-left: -113px;" class="wmd-prompt-dialog"><div align="center"><div><b>Faces</b></div><div id="face-container"><select id="face-combo" style="padding: 5px; width: 95%; margin-top: 10px; margin-bottom: 10px"/></div><div align="center"><input type="button" id="face-remove" class="button" value="Remove"><input type="button" id="face-add" class="button" value="Add" style="margin-left: 5px"><input type="button" id="face-ok" class="button" value="Ok" style="margin-left: 5px"><input type="button" id="face-cancel" class="button" value="Cancel" style="margin-left: 5px"></div></div></div>');
+	$("body").append('<div id="face-popup-bg" class="wmd-prompt-background" style="position: fixed; top: 0px; z-index: 1000; opacity: 0.5; left: 0px; width: 100%; height: 100%;"/><div id="face-popup" style="top: 50%; left: 50%; display: block; padding: 10px; position: fixed; width: 220px; z-index: 1001; margin-top: -93.5px; margin-left: -113px;" class="wmd-prompt-dialog"><div align="center"><div><b>Faces</b></div><div id="face-container"><select id="face-combo" style="padding: 5px; width: 95%; margin-top: 10px; margin-bottom: 10px"/></div><div align="center"><input type="button" id="face-remove" class="button" value="Remove"><input type="button" id="face-add" class="button" value="Add" style="margin-left: 5px"><input type="button" id="face-ok" class="button" value="Ok" style="margin-left: 5px"><input type="button" id="face-cancel" class="button" value="Cancel" style="margin-left: 5px"></div></div></div>');
 
 	$("#face-remove").click(function() {
 		/* Credit: http://stackoverflow.com/a/1152817/1104294 */

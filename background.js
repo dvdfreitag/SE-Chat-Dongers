@@ -73,6 +73,10 @@ chrome.runtime.onMessageExternal.addListener(function(request, sender, sendRespo
 		chrome.storage.sync.set({"count": count});
 		sendResponse({message: "ok"});
 	}
+	else if (request.message === "ping")
+	{
+		sendResponse({message: "pong"});
+	}
 
 	return true;
 });
