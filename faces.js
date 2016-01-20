@@ -1,20 +1,6 @@
 var extension = $("#face-extension-id").val();
 $("#chat-buttons").append('<button class="button" id="face-button">Faces</button>');
 
-var interval = setInterval(function() {
-	chrome.runtime.sendMessage(extension, {message: "ping"}, function(response) {
-		if (response === undefined || response.message !== "pong")
-		{
-			console.log("Disconnected from extension, please refresh page.");
-			stopInterval();
-		}
-	});
-}, 10000);
-
-var stopInterval = function() {
-	clearInterval(interval);
-};
-
 var getFaces = function() {
 	$("#face-combo").find("option").remove();
 
